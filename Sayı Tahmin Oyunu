@@ -1,0 +1,37 @@
+from random import randint
+
+seviye = int(input("Kaçıncı seviyeye geçmek istiyorsunuz? (1-2-3): "))
+
+if seviye == 1:
+    print("Kolay seviye")
+    tahmin_hakki = 10
+elif seviye == 2:
+    print("Orta seviye")
+    tahmin_hakki = 5
+else:
+    print("Zor Seviye")
+    tahmin_hakki = 1
+
+rand_num = randint(1, 100)
+sayac = 0
+
+while True:
+    sayac += 1
+    sayi = int(input("1 ile 100 arasında değer girin (0 çıkış): "))
+
+    if sayi == 0:
+        print("Oyunu İptal Ettiniz")
+        break
+    elif sayi < rand_num:a
+        print("Daha Yüksek Bir Sayı Girin.")
+    elif sayi > rand_num:
+        print("Daha Düşük Bir Sayı Girin.")
+    else:
+        print("Rastele seçilen sayı {0}!".format(rand_num))
+        print("Tahmin sayınız {0}".format(sayac))
+        break
+
+    tahmin_hakki -= 1
+    if tahmin_hakki == 0:
+        print("Tahmin hakkınız bitti. Doğru sayı {0} idi.".format(rand_num))
+        break
